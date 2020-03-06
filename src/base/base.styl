@@ -1,0 +1,159 @@
+// base
+body, ol, ul, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, fieldset, legend, input, textarea, select
+  margin 0
+  padding 0
+
+body
+  font-family PingFangSC-Regular,'微软雅黑', Arial, Helvetica, sans-serif !important
+  font-size 16px
+  margin 0 auto
+  background-color #fff
+  -webkit-user-select none
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+
+// clear
+clearfix = ('.clearfix')
+
+for n in clearfix
+  {n}:before,{n}:after
+    display table
+    content " "
+  {n}:after
+    clear both
+
+h1, h2, h3, h4, h5, h6
+  font-weight normal
+
+a
+  text-decoration none
+
+h1, h2, h3, h4, h5, h6, input, select, textarea, a, span, p, div, section, article
+  -webkit-tap-highlight-color rgba(0, 0, 0, 0)
+
+input, button, textarea
+  -webkit-appearance none
+
+input, select, textarea
+  font-family PingFangSC-Regular,'微软雅黑', Arial, Helvetica, sans-serif
+  outline none
+
+ul, li
+  list-style none
+  
+// retina一像素
+.retina-border-bottom,.retina-border-top,.retina-whiteborder-top
+  position relative
+  
+.retina-border-bottom:after
+  content ''
+  position absolute
+  left 0
+  bottom 0
+  right auto
+  top auto
+  height 1.2px
+  width 100%
+  background-color #DEDEDE
+  display list-item
+  color rgba(0,0,0,0)
+  -webkit-transform-origin 50% 100%
+  transform-origin 50% 100%
+  
+.retina-border-top:before
+  content ''
+  position absolute
+  left 0
+  top 0
+  right auto
+  height 1px
+  width 100%
+  background-color #DEDEDE
+  // 当display:block时，当整个页面溢出时，线条会消失，因此才有此方案
+  display list-item
+  color rgba(0,0,0,0)
+  -webkit-transform-origin 50% 0%
+  transform-origin 50% 0%
+  
+.retina-whiteborder-top:before
+  content ''
+  position absolute
+  left 0
+  top 0
+  right auto
+  height 1px
+  width 100%
+  background-color rgba(255,255,255,0.5)
+  // 当display:block时，当整个页面溢出时，线条会消失，因此才有此方案
+  display list-item
+  color rgba(0,0,0,0)
+  -webkit-transform-origin 50% 0%
+  transform-origin 50% 0%
+  
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .retina-border-bottom:after,.retina-border-top:before,.retina-whiteborder-top:before {
+    -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 3) {
+  .retina-border-bottom:after,.retina-border-top:before,.retina-whiteborder-top:before {
+    -webkit-transform: scaleY(0.33);
+            transform: scaleY(0.33);
+  }
+}
+
+
+.retina-border-right,.retina-border-left
+  position relative
+  
+.retina-border-right:after
+  content ''
+  position absolute
+  left auto
+  bottom 0
+  right 0
+  top 0
+  height 100%
+  width 1px
+  background-color #DEDEDE
+  display block
+  -webkit-transform-origin 50% 100%
+  transform-origin 50% 100%
+        
+.retina-border-left:before
+  content ''
+  position absolute
+  left 0
+  bottom 0
+  right auto
+  top 0
+  height 100%
+  width 1px
+  background-color #DEDEDE
+  display block
+  -webkit-transform-origin 50% 100%
+  transform-origin 50% 100%
+  
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .retina-border-right:after ,.retina-border-left:before {
+    -webkit-transform: scaleX(0.5);
+            transform: scaleX(0.5);
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 3) {
+  .retina-border-right:after,.retina-border-left:before {
+    -webkit-transform: scaleX(0.33);
+            transform: scaleX(0.33);
+  }
+}
+
+
+.innerContainer
+  position absolute
+  top 44px
+  bottom 0px
+  -webkit-overflow-scrolling touch
+  width 100%
+  overflow-y auto
+  background-color #ffffff
